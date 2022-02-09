@@ -23,7 +23,7 @@ app.get('/users', function (req, res) {
 async function start() {
     try {
         await mongoose.connect(
-            `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.60tfe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+            `mongodb+srv://kohnev84:kohnev84@cluster0.60tfe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
             {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
@@ -93,5 +93,5 @@ app.post('/delete_user', async (req, res, next) => {
         res.status(404)
     }
 });
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.listen(port, () => console.log("Listening on " + port));
